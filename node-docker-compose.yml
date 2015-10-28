@@ -1,0 +1,8 @@
+web:
+  image: my-node-express
+  volumes:
+    - ".:./apps"
+  ports:
+    - "3030:3000"
+  external_links:
+    - mongodb-container:mongodb
