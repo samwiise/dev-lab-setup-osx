@@ -1,0 +1,10 @@
+sinopia:
+  image: node:4.2
+  volumes:
+    - "./sinopia-repo:./apps"
+  working_dir: /apps
+  ports:
+    - "4873:4873"
+  command: "node ./node_modules/sinopia/bin/sinopia --config ./config.yaml"
+  external_links:
+#    - mongodb-container:mongodb
