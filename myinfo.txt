@@ -1,0 +1,6 @@
+
+docker ps  -f status=exited | grep /bin/sh |  awk '{print $1}'
+
+docker rmi $(docker images -f "dangling=true" -q)
+
+docker build --rm=true -t my-node-express node_express_image
